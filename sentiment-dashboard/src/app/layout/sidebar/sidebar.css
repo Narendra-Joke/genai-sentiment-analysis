@@ -1,0 +1,83 @@
+/* MAIN CONTAINER */
+.sidebar-container {
+  display: flex;
+  height: 100vh;
+  position: sticky;
+  top: 0;
+}
+
+/* MAIN SIDEBAR */
+.sidebar {
+  width: 160px;
+  background: #0f172a;
+  color: white;
+  padding: 14px;
+  flex-shrink: 0;
+}
+
+/* SUB SIDEBAR */
+.sub-sidebar {
+  width: 200px;
+  background: #83abdf;
+  padding: 12px;
+  flex-shrink: 0;
+}
+
+/* MENU */
+.menu {
+  list-style: none;
+  padding: 0;
+}
+
+.menu li {
+  padding: 8px 0;
+  cursor: pointer;
+}
+
+.clickable {
+  font-weight: 600;
+}
+
+/* SECTIONS */
+.section {
+  margin-bottom: 14px;
+}
+
+.title {
+  font-weight: bold;
+  font-size: 13px;
+  margin-bottom: 6px;
+}
+
+.item {
+  font-size: 13px;
+  padding: 6px 0;
+  cursor: pointer;
+}
+
+.item:hover {
+  text-decoration: underline;
+}
+
+/* ✅ YEAR FILTER */
+.year-filter {
+  display: flex;
+  gap: 12px;
+  margin-bottom: 12px;
+  font-size: 13px;
+  font-weight: 600;
+}
+
+.year-filter span {
+  cursor: pointer;
+  padding: 4px 6px;
+}
+
+.year-filter span.active {
+  color: #1e3a8a;
+  border-bottom: 2px solid #1e3a8a;
+}
+
+.year-filter span:hover {
+  color: #1d4ed8;
+}

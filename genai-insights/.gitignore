@@ -1,0 +1,12 @@
+venv/
+.env
+__pycache__/
+*.pyc
+.idea/
+.vscode/
+data/processed/
+data/failed/
+data/
+extraction/
+data extraction/data
+logs/

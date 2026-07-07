@@ -1,0 +1,66 @@
+<div class="login-container">
+  <div class="login-card">
+
+    <img src="assets/images/uoi-logo1.png" class="logo">
+
+    <h2>Customer Opinion Insights</h2>
+
+    <!-- 🔐 FORM LOGIN -->
+<form (ngSubmit)="login()" #loginForm="ngForm">
+
+  <div class="form-group">
+    <input
+      type="email"
+      name="email"
+      [(ngModel)]="email"
+      required
+      placeholder="Email"
+      class="input-field"
+    />
+  </div>
+
+  <div class="form-group password-wrapper">
+    <input
+      [type]="showPassword ? 'text' : 'password'"
+      name="password"
+      [(ngModel)]="password"
+      required
+      placeholder="Password"
+      class="input-field"
+    />
+
+    <span class="eye-icon" (click)="togglePassword()">
+      👁️
+    </span>
+  </div>
+
+  <button
+    type="submit"
+    [disabled]="loginForm.invalid"
+    class="login-btn"
+  >
+    Login
+  </button>
+
+</form>
+
+    <!-- ERROR -->
+    <p class="error" *ngIf="formError">
+      {{ formError }}
+    </p>
+
+    <!-- OR -->
+    <div class="or-text">OR</div>
+
+    <!-- GOOGLE -->
+    <button class="google-btn" (click)="googleLogin()">
+      <img src="assets/images/google-logo.png" class="google-icon">
+      Sign in with Google
+    </button>
+
+    <p class="error" *ngIf="googleError">
+      {{ googleError }}
+    </p>
+
+  </div>
+</div>

@@ -1,0 +1,19 @@
+.layout {
+  display: flex;
+  height: 100vh;
+}
+
+/* LEFT SIDE (SIDEBAR + SUB-SIDEBAR) */
+.nav-area {
+  display: flex;
+  height: 100vh;
+  flex-shrink: 0;
+}
+
+/* MAIN CONTENT */
+.main {
+  flex: 1;
+  background: #f5f7fa;
+  overflow-y: auto;
+  height: 100vh;
+}

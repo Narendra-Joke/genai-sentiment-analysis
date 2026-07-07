@@ -1,0 +1,44 @@
+<header class="header">
+
+  <!-- LEFT -->
+  <div class="logo">
+    COI
+  </div>
+
+  <!-- RIGHT -->
+  <div class="profile-container">
+
+    <!-- GOOGLE PROFILE IMAGE -->
+    <img
+      *ngIf="picture"
+      [src]="picture"
+      class="profile-image"
+      (click)="toggleMenu()"
+    />
+
+    <!-- FALLBACK LETTER -->
+    <div
+      *ngIf="!picture"
+      class="profile-circle"
+      (click)="toggleMenu()"
+    >
+      {{ initial }}
+    </div>
+
+    <!-- DROPDOWN MENU -->
+    <div class="menu" *ngIf="showMenu">
+
+      <div class="menu-email">
+        {{ email }}
+      </div>
+
+      <div class="menu-item" (click)="logout()">
+        Logout
+      </div>
+
+    </div>
+
+  </div>
+
+</header>
+

@@ -1,0 +1,70 @@
+<div class="sidebar-container">
+
+  <!-- MAIN SIDEBAR -->
+  <nav class="sidebar">
+    <ul class="menu">
+      <li>Dashboard</li>
+
+      <li (click)="toggle('products')" class="clickable">
+        Products
+      </li>
+
+      <li (click)="toggle('components')" class="clickable">
+        Components
+      </li>
+    </ul>
+  </nav>
+
+  <!-- PRODUCTS SUB SIDEBAR -->
+  <div class="sub-sidebar" *ngIf="activeSubMenu === 'products'">
+
+    <!-- ✅ YEAR FILTER -->
+    <div class="year-filter">
+      <span 
+        *ngFor="let year of years"
+        (click)="selectYear(year)"
+        [class.active]="year === selectedYear"
+      >
+        {{ year }}
+      </span>
+    </div>
+
+    <div *ngIf="families.length === 0">
+      Loading products...
+    </div>
+
+    <div class="section" *ngFor="let family of families">
+
+      <div class="title">
+        {{ family.familyName }} Family
+      </div>
+
+      <div 
+        class="item"
+        *ngFor="let product of family.products"
+        (click)="selectProduct(product.id)">
+        {{ product.productName }}
+      </div>
+
+    </div>
+
+  </div>
+
+  <!-- COMPONENTS SUB SIDEBAR -->
+  <div class="sub-sidebar" *ngIf="activeSubMenu === 'components'">
+
+    <div *ngIf="components.length === 0">
+      Loading components...
+    </div>
+
+    <div
+      class="item"
+      *ngFor="let component of components"
+      (click)="selectComponent(component.id)"
+    >
+      {{ component.component | titlecase }}
+    </div>
+
+  </div>
+
+</div>

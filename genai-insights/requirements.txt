@@ -1,0 +1,12 @@
+fastapi
+uvicorn
+sqlalchemy
+pymysql
+python-dotenv
+pandas
+openai>=2.0.0
+pydantic
+tenacity
+dotenv
+cryptography
+bs4

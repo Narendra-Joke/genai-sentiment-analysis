@@ -1,0 +1,210 @@
+﻿<!-- ✅ INITIAL EMPTY STATE -->
+
+<div *ngIf="isInitialState" class="welcome-container">
+
+  <h2>Welcome to Product Analytics Dashboard</h2>
+
+  <p>
+    Select a product or component from the sidebar to view insights,
+    sentiment analysis, and detailed breakdowns.
+  </p>
+
+</div>
+
+<div class="dashboard" *ngIf="productLoaded">
+
+  <!-- PRODUCT NAME -->
+  <h2>{{ productName }}</h2>
+
+  <div class="main-section">
+
+    <!-- LEFT CARD : PRODUCT IMAGE + DONUT -->
+    <div class="product-card card-box">
+
+      <div class="product-image">
+        <img
+          *ngIf="productImage"
+          [src]="'assets/images/' + productImage"
+          alt="product">
+      </div>
+
+      <div class="chart-section">
+
+        <canvas
+          #donutChart
+          baseChart
+          [data]="doughnutChartData"
+          [options]="doughnutChartOptions"
+          [type]="'doughnut'">
+        </canvas>
+
+        <div class="chart-stats">
+
+          <div class="stat">
+            <h3>{{ positive }}%</h3>
+            <p>Positive Sentiment</p>
+          </div>
+
+          <div class="stat">
+            <h3>{{ totalReviews }}</h3>
+            <p>Review Count</p>
+          </div>
+
+        </div>
+
+      </div>
+
+    </div>
+
+
+    <!-- RIGHT CARD : INFO -->
+
+    <div class="info-panel card-box">
+
+      <h3>Info</h3>
+
+      <div class="info-item">
+        <strong>Released Date</strong>
+        <p>{{ releasedDate }}</p>
+      </div>
+
+      <div class="info-item">
+        <strong>Chipset</strong>
+        <p>{{ chipset }}</p>
+      </div>
+
+      <div class="info-item">
+        <strong>Memory</strong>
+        <p>{{ memory }}</p>
+      </div>
+
+      <div class="info-item">
+        <strong>Camera</strong>
+        <p>{{ camera }}</p>
+      </div>
+
+      <div class="info-item">
+        <strong>Battery</strong>
+        <p>{{ battery }}</p>
+      </div>
+
+    </div>
+
+  </div>
+
+
+  <!-- COMPONENT BAR CHART -->
+
+  <div class="component-chart card-box">
+
+    <h3>Component Sentiment</h3>
+
+    <div *ngIf="componentDataAvailable; else noComponentData">
+
+      <canvas
+        #barChart
+        baseChart
+        [data]="barChartData"
+        [options]="barChartOptions"
+        [type]="'bar'">
+      </canvas>
+
+    </div>
+
+    <ng-template #noComponentData>
+      <div class="empty-dashboard">
+        Data not available
+      </div>
+    </ng-template>
+
+  </div>
+
+  <!-- source wiss BAR CHART -->
+
+  <div class="component-chart card-box">
+
+  <h3>Source Wise Sentiment</h3>
+
+  <div *ngIf="sourceDataAvailable; else noSourceData">
+
+    <canvas
+      baseChart
+      [data]="sourceChartData"
+      [options]="sourceChartOptions"
+      [type]="'bar'">
+    </canvas>
+
+  </div>
+
+  <ng-template #noSourceData>
+    <div class="empty-dashboard">
+      Data not available
+    </div>
+  </ng-template>
+
+  </div>
+  <!-- end source wiss BAR CHART -->
+
+  <!-- COUNTRY PIE CHART -->
+
+<div class="country-chart card-box">
+
+  <h3>Country Wise Reviews</h3>
+
+  <div *ngIf="countryDataAvailable; else noCountryData" class="country-wrapper">
+
+    <canvas
+      baseChart
+      [data]="countryChartData"
+      [options]="countryChartOptions"
+      [type]="'pie'">
+    </canvas>
+
+  </div>
+
+  <ng-template #noCountryData>
+    <div class="empty-dashboard">
+      Data not available
+    </div>
+  </ng-template>
+
+</div>
+
+<!-- END COUNTRY PIE CHART -->
+
+
+</div>
+
+
+<!-- COMPONENT SENTIMENT PAGE -->
+
+<div class="dashboard" *ngIf="componentLoaded">
+
+  <h2>{{ componentName }}</h2>
+
+  <div class="component-chart card-box component-donut-container">
+
+    <canvas
+      baseChart
+      [data]="doughnutChartData"
+      [options]="doughnutChartOptions"
+      [type]="'doughnut'">
+    </canvas>
+
+    <div class="chart-stats">
+
+      <div class="stat">
+        <h3>{{ positive }}%</h3>
+        <p>Positive Sentiment</p>
+      </div>
+
+      <div class="stat">
+        <h3>{{ totalReviews }}</h3>
+        <p>Review Count</p>
+      </div>
+
+    </div>
+
+  </div>
+
+</div>

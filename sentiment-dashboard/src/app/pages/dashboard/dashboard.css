@@ -1,0 +1,148 @@
+.dashboard{
+  padding:20px;
+  background:#f3f4f6;
+  min-height:100vh;
+}
+
+/* TOP LAYOUT */
+
+.main-section{
+  display:flex;
+  gap:30px;
+  align-items:flex-start;
+}
+
+/* CARD STYLE */
+
+.card-box{
+  background:#f7f7f7;
+  padding:20px;
+  border-radius:10px;
+  box-shadow:0 2px 8px rgba(0,0,0,0.08);
+}
+
+/* PRODUCT CARD */
+
+.product-card{
+  display:flex;
+  gap:40px;
+  align-items:center;
+}
+
+/* PRODUCT IMAGE */
+
+.product-image img{
+  width:220px;
+}
+
+/* DONUT */
+
+.chart-section{
+  width:300px;
+}
+
+.chart-stats{
+  display:flex;
+  justify-content:space-around;
+  margin-top:20px;
+}
+
+.stat h3{
+  margin:0;
+}
+
+/* INFO PANEL */
+
+.info-panel{
+  width:260px;
+}
+
+.info-item{
+  margin-bottom:14px;
+}
+
+.info-item p{
+  margin:0;
+  color:#666;
+}
+
+/* COMPONENT CHART */
+
+.component-chart{
+  margin-top:40px;
+}
+
+.component-chart canvas{
+  width:100%;
+  max-width:900px;
+}
+
+.component-chart h3{
+  margin-bottom:20px;
+}
+
+/* EMPTY DATA */
+
+.empty-dashboard{
+  display:flex;
+  justify-content:center;
+  align-items:center;
+  height:80px;
+  font-size:16px;
+  color:#777;
+}
+
+/* COMPONENT SENTIMENT PAGE */
+
+.component-donut-container{
+  width:350px;
+  margin-top:30px;
+}
+
+.component-donut-container canvas{
+  width:100%;
+  max-width:350px;
+}
+
+.card-box:hover{
+  box-shadow:0 6px 16px rgba(0,0,0,0.12);
+  transition:0.2s;
+}
+
+/* COUNTRY PIE CHART */
+
+/* COUNTRY PIE CHART */
+
+.country-chart{
+  margin-top:40px;
+  width:420px;   /* controls the whole box width */
+}
+
+.country-wrapper{
+  width:280px;
+  height:280px;
+  margin:auto;   /* center the pie chart */
+}
+
+.country-wrapper canvas{
+  width:100% !important;
+  height:100% !important;
+}
+
+.welcome-container{
+  display:flex;
+  flex-direction:column;
+  justify-content:center;
+  align-items:center;
+  height:80vh;
+  text-align:center;
+  color:#555;
+}
+
+.welcome-container h2{
+  margin-bottom:10px;
+}
+
+.welcome-container p{
+  font-size:15px;
+}
